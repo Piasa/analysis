@@ -5,4 +5,11 @@ if __name__=="__main__":
     fb = open(file, 'r')
     load_dict = json.load(fb)
     fb.close()
-    pprint(load_dict[0:20])
+    alevel = ()
+    university = ()
+    hobbies = ()
+    language = ()
+    employee = ()
+    for i in load_dict:
+        if i['Degree Level'] == '1st' and i['University Attended'] == 'New York University':
+            pprint(i)
