@@ -1,2 +1,118 @@
-Subject,accept,total,acceptrate
-"Mathematics",12,100,0.12
+Subject,Rank
+ 'Mathematics',10
+ 'Japanese ',5
+ 'English Language and Literature ',5
+ 'Irish ',5
+ 'Further Mathematics',10
+ 'Technology and Design ',8
+ 'Applied Business ',6
+ 'Critical Thinking ',6
+ 'Product Design ',5
+ 'Bengali ',5
+ 'Thinking Skills ',5
+ 'Psychology ',5
+ 'Film Studies ',5
+ 'Classical Greek ',5
+ 'Politics ',5
+ 'Hindi ',5
+ 'Professional Business Services ',5
+ 'Physical Education ',7
+ 'Engineering ',9
+ 'Portuguese ',5
+ 'Food Technology ',5
+ 'Digital Media and Design ',6
+ 'Panjabi ',5
+ 'Archaeology ',5
+ 'Media Studies ',5
+ 'Creative Writing ',5
+ 'General Studies ',5
+ 'Economics and Business ',5
+ 'Drama ',5
+ 'Computer Science',10
+ 'Electronics ',9
+ 'Russian ',5
+ 'Communication and Culture ',5
+ 'Fashion and Textiles ',5
+ 'Classical Studies ',5
+ 'French ',5
+ 'Information Technology ',9
+ 'Moving Image Arts ',5
+ 'Religious Studies ',5
+ 'Journalism ',5
+ 'Dutch ',5
+ 'Computing',10
+ 'Performance Studies ',5
+ 'Travel and Tourism ',5
+ 'Business ',5
+ 'History ',5
+ 'Government and Politics ',5
+ 'Gujarati ',5
+ 'Digital Technology ',8
+ 'Polish ',5
+ 'Applied Art and Design ',5
+ 'Applied Science ',7
+ 'Divinity ',5
+ 'Applied ICT ',6
+ 'Classical Civilisation ',5
+ 'Biology',5
+ 'Geography ',5
+ 'Music Technology ',5
+ 'Modern Hebrew ',5
+ 'Ancient History ',5
+ 'Environmental Studies ',5
+ 'Afrikaans ',5
+ 'Hinduism ',5
+ 'Statistics ',5
+ 'Health and Social Care ',5
+ 'Arabic ',5
+ 'German ',5
+ 'Persian ',5
+ 'English Language ',5
+ 'Economics ',5
+ 'Humanities ',5
+ 'Food Studies ',5
+ 'Citizenship Studies ',5
+ 'Life and Health Sciences ',5
+ 'Italian ',5
+ 'Global Development ',5
+ 'Sports Science ',5
+ 'English Literature ',5
+ 'Performing Arts ',5
+ 'Music ',5
+ 'Chinese ',5
+ 'Photography',5
+ 'Home Economics ',5
+ 'Business Studies ',5
+ 'Accounting',5
+ 'Art and Design ',5
+ 'Anthropology ',5
+ 'Global Perspectives and Research ',5
+ 'Leisure Studies ',5
+ 'Environmental Technology ',5
+ 'Marine Science ',5
+ 'Tamil ',5
+ 'History of Art ',5
+ 'Drama and Theatre ',5
+ 'Dance ',5
+ 'Systems and Control Technology ',5
+ 'Modern Languages ',5
+ 'Philosophy ',5
+ 'Turkish',5
+ 'Human Biology ',5
+ 'Quantitative Methods ',5
+ 'Software Systems Development ',10
+ 'Science in Society ',6
+ 'Law ',5
+ 'Geology ',5
+ 'Nutrition and Food Science ',5
+ 'Physics',7
+ 'Islamic Studies ',5
+ 'Design and Textiles ',5
+ 'Environmental Science ',5
+ 'ICT ',5
+ 'Design and Technology ',5
+ 'Spanish ',5
+ 'Chemistry',6
+ 'Latin ',5
+ 'Greek ',5
+ 'Sociology ',5
