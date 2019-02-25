@@ -1,4 +1,5 @@
 # analysis
+# ignore data folder and test2.py
 put analysis folder next to the python file you want to use 
 add 'from analysis import *' at the head of the python file
 two function available:
