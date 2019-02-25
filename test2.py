@@ -51,6 +51,7 @@ if __name__=="__main__":
             {'Expertise': 7, 'Skill': 'Online collaboration'}],
  'University Attended': 'University of Glasgow'}
     print(predict.inputcv(a))
+    feedback.inputfeedback(a,1)
     '''a = open('/Users/gaoyifan/Downloads/CVDataset/cvDataset.json', 'rt')
     f = json.load(a)
     a.close()

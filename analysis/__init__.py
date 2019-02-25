@@ -1,1 +1,1 @@
-__all__ = ['ED']
+__all__ = ['ED','feedback','predict','feedback']
