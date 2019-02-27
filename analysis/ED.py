@@ -50,9 +50,11 @@ def degree(cv):
     return score
 
 def analysisED(cv):
+    a = alevelscore(cv)+skillscore(cv)+employmentscore(cv)+hobbyscore(cv)+degree(cv)+languagescore(cv)
+    return np.array([[alevelscore(cv),skillscore(cv),employmentscore(cv),hobbyscore(cv),degree(cv),languagescore(cv),a]])
 
-    if alevelscore(cv)>=24 and languagescore(cv)>=15 and degree(cv)>=8:
+    '''if alevelscore(cv)>=24 and languagescore(cv)>=15 and degree(cv)>=8:
         return np.array([[alevelscore(cv),skillscore(cv),employmentscore(cv),hobbyscore(cv),degree(cv),languagescore(cv),1]])
     else:
-        return np.array([[alevelscore(cv),skillscore(cv),employmentscore(cv),hobbyscore(cv),degree(cv),languagescore(cv),0]])
+        return np.array([[alevelscore(cv),skillscore(cv),employmentscore(cv),hobbyscore(cv),degree(cv),languagescore(cv),0]])'''
 

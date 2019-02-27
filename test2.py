@@ -19,7 +19,7 @@ if __name__=="__main__":
                             {'Grade': 'C',
                              'Subject': 'Applied Art and Design '},
                             {'Grade': 'B', 'Subject': 'Journalism '}],
- 'Degree Level': '1st',
+                            'Degree Level': '1st',
  'Degree Qualification': 'Mathematics and Physics, MMathPhys',
  'Hobbies': [{'Interest': 8, 'Name': 'Gardening'},
              {'Interest': 3, 'Name': 'Tango'},
@@ -51,7 +51,7 @@ if __name__=="__main__":
             {'Expertise': 7, 'Skill': 'Online collaboration'}],
  'University Attended': 'University of Glasgow'}
     print(predict.inputcv(a))
-    feedback.inputfeedback(a,1)
+    feedback.inputfeedback(a,170)
     '''a = open('/Users/gaoyifan/Downloads/CVDataset/cvDataset.json', 'rt')
     f = json.load(a)
     a.close()
