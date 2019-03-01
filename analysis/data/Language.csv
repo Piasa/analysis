@@ -1,46 +1,46 @@
 Language,Rank
-'Visual Basic .NET',
- 'Ruby',
- 'C++',
- 'HTML',
- 'Ruby-on-rails',
- 'Executable UML',
- 'UNITY',
- 'TeX',
- 'LaTeX',
- 'High Level Assembly',
- 'Visual Basic',
- 'PostScript',
- 'BASIC',
- 'SQL',
- 'Assembly',
- 'Mathematica',
- 'Perl',
- 'R',
- 'C',
- 'Java',
- 'Fortran',
- 'Prolog',
- 'MATLAB',
- 'Scala',
- 'Python',
- 'JSON',
- 'C#',
- 'Haskell',
- 'Unix Shell',
- 'Lisp',
- 'Bash',
- 'Visual J++',
- 'CUDA',
- 'COBOL',
- 'PhP',
- 'JavaScript',
- 'Pascal',
- 'SPARK',
- 'Go!',
- 'JScript',
- 'Objective-C',
- 'Batch File',
- 'R++',
- 'Hack',
- 'MySQL'
+'Visual Basic .NET',7
+ 'Ruby',5
+ 'C++',10
+ 'HTML',9
+ 'Ruby-on-rails',6
+ 'Executable UML',6
+ 'UNITY',5
+ 'TeX',5
+ 'LaTeX',5
+ 'High Level Assembly',6
+ 'Visual Basic',5
+ 'PostScript',5
+ 'BASIC',5
+ 'SQL',8
+ 'Assembly',5
+ 'Mathematica',6
+ 'Perl',6
+ 'R',6
+ 'C',5
+ 'Java',10
+ 'Fortran',6
+ 'Prolog',5
+ 'MATLAB',5
+ 'Scala',5
+ 'Python',10
+ 'JSON',9
+ 'C#',7
+ 'Haskell',5
+ 'Unix Shell',6
+ 'Lisp',5
+ 'Bash',6
+ 'Visual J++',5
+ 'CUDA',5
+ 'COBOL',5
+ 'PhP',10
+ 'JavaScript',10
+ 'Pascal',5
+ 'SPARK',8
+ 'Go!',10
+ 'JScript',8
+ 'Objective-C',6
+ 'Batch File',5
+ 'R++',5
+ 'Hack',5
+ 'MySQL',9
