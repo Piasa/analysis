@@ -5,21 +5,14 @@ from pprint import pprint
 import pandas as pd
 import torch
 import torch.nn as nn
-class LR(nn.Module):
-    def __init__(self):
-        super(LR,self).__init__()
-        self.fc=nn.Linear(6,2)
-    def forward(self,x):
-        out=self.fc(x)
-        out=torch.sigmoid(out)
-        return out
+
 if __name__=="__main__":
-    a = {'A-Level Qualifications': [{'Grade': 'A', 'Subject': 'Mathematics'},
-                            {'Grade': 'A', 'Subject': 'Further Mathematics'},
+    a = {'A-Level Qualifications': [{'Grade': 'C', 'Subject': 'Mathematics'},
+                            {'Grade': 'C', 'Subject': 'Further Mathematics'},
                             {'Grade': 'C',
                              'Subject': 'Applied Art and Design '},
-                            {'Grade': 'B', 'Subject': 'Journalism '}],
-                            'Degree Level': '1st',
+                            {'Grade': 'C', 'Subject': 'Journalism '}],
+                            'Degree Level': '2:2',
  'Degree Qualification': 'Mathematics and Physics, MMathPhys',
  'Hobbies': [{'Interest': 8, 'Name': 'Gardening'},
              {'Interest': 3, 'Name': 'Tango'},
@@ -51,12 +44,14 @@ if __name__=="__main__":
             {'Expertise': 7, 'Skill': 'Online collaboration'}],
  'University Attended': 'University of Glasgow'}
     print(predict.inputcv(a))
-    feedback.inputfeedback(a,170)
+    #feedback.inputfeedback(a,170)
     '''a = open('/Users/gaoyifan/Downloads/CVDataset/cvDataset.json', 'rt')
     f = json.load(a)
     a.close()
     x = 0
+    u = []
     for i in f:
-        if predict.inputcv(i) == 1:
-            pprint(i)'''
-
+        for x in i['Previous Employment']:
+            if not (x['Position'] in u):
+                u.append(x['Position'])
+    pprint(u)'''
