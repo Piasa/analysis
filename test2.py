@@ -51,7 +51,13 @@ if __name__=="__main__":
     x = 0
     u = []
     for i in f:
-        for x in i['Previous Employment']:
-            if not (x['Position'] in u):
-                u.append(x['Position'])
+        
+        u.append(x['Position'])
     pprint(u)'''
+    data = np.loadtxt("./analysis/out.txt")
+    n, l = data.shape
+    for j in range(l-1):
+        meanVal=np.mean(data[:,j])
+        stdVal=np.std(data[:,j])
+        data[:,j]=(data[:,j]-meanVal)/stdVal
+        print(meanVal,stdVal)

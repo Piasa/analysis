@@ -6,7 +6,7 @@ data=np.loadtxt("out.txt")
 mean = np.array([0])
 n,l=data.shape
 '''
-for j in range(l):
+for j in range(l-1):
     meanVal=np.mean(data[:,j])
     stdVal=np.std(data[:,j])
     data[:,j]=(data[:,j]-meanVal)/stdVal
