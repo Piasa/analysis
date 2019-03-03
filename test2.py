@@ -44,7 +44,7 @@ if __name__=="__main__":
             {'Expertise': 6, 'Skill': 'Constructive criticism'},
             {'Expertise': 7, 'Skill': 'Online collaboration'}],
  'University Attended': 'University of Glasgow'}
-    print(predict.inputcv(a))
+    print(predict.inputcv(a,30))
     #feedback.inputfeedback(a,170)
     '''a = open('/Users/gaoyifan/Downloads/CVDataset/cvDataset.json', 'rt')
     f = json.load(a)
@@ -57,8 +57,9 @@ if __name__=="__main__":
     pprint(u)'''
     '''data = np.loadtxt("./analysis/out.txt")
     n, l = data.shape
-    for j in range(l-1):
+    for j in range(l):
         meanVal=np.mean(data[:,j])
         stdVal=np.std(data[:,j])
         data[:,j]=(data[:,j]-meanVal)/stdVal
-        print(meanVal,stdVal)'''
+        max = np.max(data[:,j])
+        print(max)'''

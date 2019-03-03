@@ -24,7 +24,7 @@ class LR(nn.Module):
         return nn.functional.softmax(self.fc6(out),dim=1)
         '''out=torch.sigmoid(out)'''
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-def inputcv(cv):
+def inputcv(cv,score):
     result = ED.analysisED(cv)
     n, l = result.shape
     mean = np.loadtxt("./analysis/mean.txt")
@@ -38,8 +38,21 @@ def inputcv(cv):
     test_in = test_in
     test_out=net(test_in)
     out = test_out.max(-1)[1].detach().numpy()
-    return out[0]
-    '''if out[0] == 0:
-        return False
+    mark = out[0]
+    bias = 0
+
+    if score >=80:
+        bias = 2
+    elif score <=50:
+        bias = -2
     else:
-        return True'''
+        bias = 0
+
+    if bias + mark >10:
+        mark = 10
+    elif bias + mark<0:
+        mark = 0
+    else:
+        mark = mark + bias
+
+    return mark
