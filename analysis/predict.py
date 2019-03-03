@@ -3,22 +3,33 @@ import torch
 import torch.nn as nn
 import numpy as np
 
-class LR(nn.Module):
+'''class LR(nn.Module):
     def __init__(self):
         super(LR,self).__init__()
         self.fc=nn.Linear(6,1)
     def forward(self,x):
         out=self.fc(x)
+        return out'''
+class LR(nn.Module):
+    def __init__(self):
+        super(LR,self).__init__()
+        self.fc1=nn.Linear(6,12)
+        self.fc2=nn.Linear(12,12)
+        self.fc3=nn.Linear(12,12)
+        self.fc4=nn.Linear(12,11)
+    def forward(self,x):
+        out=nn.functional.relu(self.fc1(x))
+        out=nn.functional.relu(self.fc2(out))
+        out=nn.functional.relu(self.fc3(out))
+        return nn.functional.softmax(self.fc4(out),dim=1)
         '''out=torch.sigmoid(out)'''
-        return out
-
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 def inputcv(cv):
     result = ED.analysisED(cv)
     n, l = result.shape
-    '''mean = np.loadtxt("./analysis/mean.txt")
+    mean = np.loadtxt("./analysis/mean.txt")
     for j in range(l - 1):
-        result[:, j] = (result[:, j] - mean[j*2+1]) / mean[j*2+2]'''
+        result[:, j] = (result[:, j] - mean[j*2+1]) / mean[j*2+2]
     test_data = result[:,:l - 1]
     net = LR()
     net.load_state_dict(torch.load('./analysis/model.pkl',map_location=device))
@@ -26,6 +37,7 @@ def inputcv(cv):
     test_in=torch.from_numpy(test_data).float()
     test_in = test_in
     test_out=net(test_in)
+    print(test_out)
     out = test_out.max(-1)[0].detach().numpy()
     return out[0]
     '''if out[0] == 0:

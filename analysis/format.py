@@ -6,7 +6,7 @@ f = json.load(a)
 a.close()
 sample = np.array([[25,25,5,15,10,20,100]])
 a = 1
-for i in f:
+for i in f[-10000:]:
     a = a + 1
     if(a%1000 == 0):
         print(a)

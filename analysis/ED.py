@@ -5,7 +5,7 @@ import csv
 def employmentscore(cv):
     score = 0
     for i in cv['Previous Employment']:
-        with open('data/Position.csv') as f:
+        with open('./analysis/data/Position.csv') as f:
             Position = csv.DictReader(f)
             for x in Position:
                 if x['Position'] == " '" + i['Position'] + "'":
@@ -25,7 +25,7 @@ def hobbyscore(cv):
 def skillscore(cv):
     score = 0
     for i in cv['Skills']:
-        with open('data/Skill.csv') as f:
+        with open('./analysis/data/Skill.csv') as f:
             skill = csv.DictReader(f)
             for x in skill:
                 if x['Skill'] == "'" + i['Skill'] + "'":
@@ -38,7 +38,7 @@ def skillscore(cv):
 def languagescore(cv):
     score = 0
     for i in cv['Languages Known']:
-        with open('data/Language.csv') as f:
+        with open('./analysis/data/Language.csv') as f:
             language = csv.DictReader(f)
             for x in language:
                 if x['Language'] == "'"+i['Language']+"'":
@@ -51,7 +51,7 @@ def languagescore(cv):
 def alevelscore(cv):
     score = 0
     for i in cv['A-Level Qualifications']:
-        with open('data/Alevel.csv') as f:
+        with open('./analysis/data/Alevel.csv') as f:
             alevel = csv.DictReader(f)
             for sub in alevel:
                 if sub['Subject'] == " '"+i['Subject']+"'":
@@ -73,7 +73,7 @@ def degree(cv):
     score = 0
     University = cv['University Attended']
     Rank = 5
-    with open('data/University.csv') as f:
+    with open('./analysis/data/University.csv') as f:
         Uni = csv.DictReader(f)
         for i in Uni:
             if i['University'] == "'"+University+"'":
@@ -87,8 +87,43 @@ def degree(cv):
     return score
 
 def analysisED(cv):
-    a = alevelscore(cv)+skillscore(cv)+employmentscore(cv)+hobbyscore(cv)+degree(cv)+languagescore(cv)
-    return np.array([[alevelscore(cv),skillscore(cv),employmentscore(cv),hobbyscore(cv),degree(cv),languagescore(cv),a]])
+    score = 0
+    a = alevelscore(cv)
+    s = skillscore(cv)
+    e = employmentscore(cv)
+    h = hobbyscore(cv)
+    d = degree(cv)
+    l = languagescore(cv)
+    if a<=100:
+        score = score + 0
+    elif a>=250:
+        score = score + 10
+    else:
+        score = score + int((a-85)/15)
+
+    if s <= 100:
+        score = score + 0
+    elif s>= 300:
+        score = score + 10
+    else:
+        score = score + int((s - 85) / 15)
+
+    if d <= 25:
+        score = score + 0
+    elif d >= 100:
+        score = score + 10
+    else:
+        score = score + int((d - 17.5) / 7.5)
+
+    if l <= 100:
+        score = score + 0
+    elif l >= 800:
+        score = score + 10
+    else:
+        score = score + int((l - 30) / 70)
+
+    score = int(score/4)
+    return np.array([[alevelscore(cv),skillscore(cv),employmentscore(cv),hobbyscore(cv),degree(cv),languagescore(cv),score]])
 
     '''if alevelscore(cv)>=24 and languagescore(cv)>=15 and degree(cv)>=8:
         return np.array([[alevelscore(cv),skillscore(cv),employmentscore(cv),hobbyscore(cv),degree(cv),languagescore(cv),1]])

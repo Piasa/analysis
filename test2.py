@@ -5,13 +5,14 @@ from pprint import pprint
 import pandas as pd
 import torch
 import torch.nn as nn
+import numpy as np
 
 if __name__=="__main__":
-    a = {'A-Level Qualifications': [{'Grade': 'C', 'Subject': 'Mathematics'},
-                            {'Grade': 'C', 'Subject': 'Further Mathematics'},
-                            {'Grade': 'C',
+    a = {'A-Level Qualifications': [{'Grade': 'A*', 'Subject': 'Mathematics'},
+                            {'Grade': 'B', 'Subject': 'Further Mathematics'},
+                            {'Grade': 'B',
                              'Subject': 'Applied Art and Design '},
-                            {'Grade': 'C', 'Subject': 'Journalism '}],
+                            {'Grade': 'A', 'Subject': 'Journalism '}],
                             'Degree Level': '2:2',
  'Degree Qualification': 'Mathematics and Physics, MMathPhys',
  'Hobbies': [{'Interest': 8, 'Name': 'Gardening'},
@@ -54,10 +55,10 @@ if __name__=="__main__":
         
         u.append(x['Position'])
     pprint(u)'''
-    data = np.loadtxt("./analysis/out.txt")
+    '''data = np.loadtxt("./analysis/out.txt")
     n, l = data.shape
     for j in range(l-1):
         meanVal=np.mean(data[:,j])
         stdVal=np.std(data[:,j])
         data[:,j]=(data[:,j]-meanVal)/stdVal
-        print(meanVal,stdVal)
+        print(meanVal,stdVal)'''
