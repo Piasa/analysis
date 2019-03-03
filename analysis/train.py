@@ -23,17 +23,24 @@ print(train_lab)
 class LR(nn.Module):
     def __init__(self):
         super(LR,self).__init__()
-        self.fc1=nn.Linear(6,128)
-        self.fc2=nn.Linear(128,128)
-        self.fc3=nn.Linear(128,128)
-        self.fc4=nn.Linear(128,11)
+        self.fc1=nn.Linear(6,64)
+        self.fc2=nn.Linear(64,64)
+        self.fc3=nn.Linear(64,64)
+        self.fc6=nn.Linear(64,11)
     def forward(self,x):
-        out=nn.functional.relu(self.fc1(x))
-        out=nn.functional.relu(self.fc2(out))
-        out=nn.functional.relu(self.fc3(out))
-        return nn.functional.softmax(self.fc4(out),dim=1)
-        '''out=torch.sigmoid(out)'''
+        out=torch.tanh(self.fc1(x))
+        out=torch.tanh(self.fc2(out))
+        out=torch.tanh(self.fc3(out))
+        return nn.functional.softmax(self.fc6(out),dim=1)
         return out
+'''class LR(nn.Module):
+    def __init__(self):
+        super(LR,self).__init__()
+        self.fc=nn.Linear(6,11) # 由于24个维度已经固定了，所以这里写24
+    def forward(self,x):
+        out=self.fc(x)
+        out=torch.nn.functional.softmax(out,dim=1)
+        return out'''
 
 def test(pred,lab):
     t=pred.max(-1)[1]==lab
@@ -43,8 +50,8 @@ net=LR()
 net.to(device)
 criterion=nn.CrossEntropyLoss()
 '''criterion=nn.MSELoss()'''
-'''optm=torch.optim.Adam(net.parameters())'''
-optm = torch.optim.SGD(net.parameters(),lr=0.01,momentum=0.9)
+optm=torch.optim.Adam(net.parameters())
+#optm = torch.optim.SGD(net.parameters(),lr=0.01,momentum=0.9)
 epochs=10000
 
 for i in range(epochs):
@@ -60,8 +67,8 @@ for i in range(epochs):
     optm.step()
     if (i+1)%1000 ==0 :
         net.eval()
-        test_in=torch.from_numpy(test_data).float()
-        test_l=torch.from_numpy(test_lab).long()
+        test_in=torch.from_numpy(test_data).float().to(device)
+        test_l=torch.from_numpy(test_lab).long().to(device)
         test_out=net(test_in)
         accu=test(test_out,test_l)
         print("Epoch:{},Loss:{:.4f}Accu:{:.3f}".format(i + 1, loss.item(),accu))

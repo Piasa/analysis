@@ -13,15 +13,15 @@ import numpy as np
 class LR(nn.Module):
     def __init__(self):
         super(LR,self).__init__()
-        self.fc1=nn.Linear(6,12)
-        self.fc2=nn.Linear(12,12)
-        self.fc3=nn.Linear(12,12)
-        self.fc4=nn.Linear(12,11)
+        self.fc1=nn.Linear(6,64)
+        self.fc2=nn.Linear(64,64)
+        self.fc3=nn.Linear(64,64)
+        self.fc6=nn.Linear(64,11)
     def forward(self,x):
-        out=nn.functional.relu(self.fc1(x))
-        out=nn.functional.relu(self.fc2(out))
-        out=nn.functional.relu(self.fc3(out))
-        return nn.functional.softmax(self.fc4(out),dim=1)
+        out=torch.tanh(self.fc1(x))
+        out=torch.tanh(self.fc2(out))
+        out=torch.tanh(self.fc3(out))
+        return nn.functional.softmax(self.fc6(out),dim=1)
         '''out=torch.sigmoid(out)'''
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 def inputcv(cv):
@@ -37,8 +37,7 @@ def inputcv(cv):
     test_in=torch.from_numpy(test_data).float()
     test_in = test_in
     test_out=net(test_in)
-    print(test_out)
-    out = test_out.max(-1)[0].detach().numpy()
+    out = test_out.max(-1)[1].detach().numpy()
     return out[0]
     '''if out[0] == 0:
         return False

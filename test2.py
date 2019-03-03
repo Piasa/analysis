@@ -9,11 +9,11 @@ import numpy as np
 
 if __name__=="__main__":
     a = {'A-Level Qualifications': [{'Grade': 'A*', 'Subject': 'Mathematics'},
-                            {'Grade': 'B', 'Subject': 'Further Mathematics'},
-                            {'Grade': 'B',
+                            {'Grade': 'A*', 'Subject': 'Further Mathematics'},
+                            {'Grade': 'A*',
                              'Subject': 'Applied Art and Design '},
                             {'Grade': 'A', 'Subject': 'Journalism '}],
-                            'Degree Level': '2:2',
+                            'Degree Level': '1st',
  'Degree Qualification': 'Mathematics and Physics, MMathPhys',
  'Hobbies': [{'Interest': 8, 'Name': 'Gardening'},
              {'Interest': 3, 'Name': 'Tango'},
